@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta name="author" CONTENT="SRD">
+	<meta name="generator" CONTENT="notepad">
+	<link rel="stylesheet" href="set.css">
+</head>
+
+<body class="page">
+<h5>Caratteristiche di un file grafico</h5>
+<HR >
+
+<h4><a name="Cos'è un file grafico">Cos'è un file grafico</a></h4>
+
+<p class="Text">
+Un file grafico è un file contenente dati grafici, cioè dati che permettono do costruire un'immagine. Questi file hanno lo scopo di conservare, organizzare e recuperare dati grafici in modo efficiente e logico. L'implementazione di un file grafico è molto complessa, ma anche importante per la velocità con cui può essere letto, per lo spazio che occupa e per la semplicità con cui può essere utilizzato in un'applicazione. Vedremo successivamente l'organizzazione generale di un file grafico.
+</p>
+
+<h4><a name="Header e Palette">Header e Palette</a></h4>
+
+<p class="Text">
+L' <b>Header</b>, o testata di un file grafico, è una serie di byte contenenti informazioni come l'altezza, la lunghezza, la versione del formato , la profondità dell'immagine da visualizzare.  Genericamente, i primi byte dell'header vengono chiamati <b>Magic Number</b> e contengono l'informazione sul tipo di formato. A volte l'header contiene un campo puntatore che contiene un puntatore ad un secondo header. La dimensione in byte dell'header dipende dal tipo di formato grafico. La  <b>palette</b>, detta anche mappa dei colori, si trova subito dopo l'header e può essere  di lunghezza variabile. La palette è una componente fondamentale del file grafico, in quanto contiene l'indice dei colori dell'immagine da visualizzare. Un colore viene rappresentato con 3 byte, che corrispondono rispettivamente al rosso, verde e il blu.
+</p>
+
+<div class="center"><img src="TOrganized.gif" alt="Struttura logica di un file grafico" width="245" height="228"></div>
+
+<p class="Note">Struttura logica di un file grafico</p>
+
+<HR>
+</body>
+</html>

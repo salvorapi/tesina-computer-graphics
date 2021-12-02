@@ -1,0 +1,83 @@
+pre {
+	margin:10px;
+	border:1px solid black;
+	background-color:#DDDDDD;
+}
+LI {
+	margin-left:40px;
+}
+HR {
+	
+	color:#BBBBBB;
+	background-color:#BBBBBB;
+	align:left;
+	padding:0px;
+	height:5px;
+	border-style:none;
+
+
+}
+.Text {
+			font-family : "Courier New";
+			font-size: 0.9em;
+			color: #000000;
+			margin:10px;
+			text-align:justify;
+		}
+
+.Note {
+			margin:20px;
+			font-size: 9pt;
+			color: #000000;
+		}
+
+.TitleMenu {
+						font-family: Verdana;
+						font-size: 14pt;
+						font-weight: bold;
+						color: #000000;
+			  }
+.NoLink {
+			font-family: Courier New;
+			font-size: 10pt;
+			text-decoration: underline;
+		   font-weight: bold;
+		  }
+.center  {
+			 text-align: center;
+			 align: center;
+			}
+h1, h2, h3,h5 {
+			font-family: "Verdana";
+			color: #000000;
+			font-weight : normal;
+		 }
+h1 {
+			font-size: 28pt;
+			font-weight: bold;
+}
+h2 {		font-size: 12pt; }
+
+h3 {
+		font-size: 12pt;
+		font-style : italic;
+}
+h4 {
+	font-family : "Courier New";
+	font-size: 12pt;
+	text-decoration: underline;
+	font-weight: bold;
+	color: #000000;
+	margin:10px;
+}
+h5 {
+			font-size: 18pt;
+			font-weight: bold;
+			margin-top:10px;
+			margin-bottom:10px;
+}
+body.page {
+		margin: 0px;
+		padding:0px;
+		width:98%;
+}

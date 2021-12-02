@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta name="author" CONTENT="SRD">
+		<meta name="generator" CONTENT="notepad">
+	</head>
+	<link rel="stylesheet" href="set.css">
+	<body class="page">
+	<hr>
+	<h4>GIF (Graphics InterChanghe Format)</h4>
+	<p class="Text">
+		<b>Tipo:</b> Bitmap<br>
+		<b>Colori:</b> Da 1 a 8 bit.<br>
+		<b>Compressione:</b> LZW.<br>
+		<b>Dimensione massima dell'immagine:</b> 64kx64k pixel.<br><br>
+		GIF ( Graphics Interchange Format ) è una creazione di CompuServe Inc., ed è usato per conservare più 
+		immagini in un unico file,che possono formare un animazione, per trasferimenti tra diverse piattaforme. GIF è uno dei formati 
+		forse più diffuso per immagini e grafica a multibit, come si può vedere della maggior parte di BBS e archivi. Le immagini sono 
+		sempre compresse con l'algoritmo LZW, che raggiunge, su immagini a 8 bit, un rapporto di compressione di oltre il 40%. Non è 
+		possibile conservare dati non compressi o con una compressione diversa da LZW. Esistono due versioni di GIF: quella originale è 
+		GIF 87a e quella più recente GIF89a, che permette di conservare oltre a dati grafici anche dati di tipo testo. I dati di una GIF possono 
+		essere di due tipi: <b>Non-Interlaced</b> ( Non Interlacciati ) e <b>Interlaced</b> ( Interlacciati ).
+		Nel primo ci sono prima le linee pari e poi quelle dispari, e ogni passata codifica più linee della precedente. 
+		Nel secondo, GIF usa uno schema di interlacing a 4 passate: la prima comincia dalla riga 0 e legge una riga ogni 8; 
+		la seconda comincia dalla 4 e legge ancora una riga ogni 8; la terza comincia dalla linea 2 legge una riga ogni 4; l'ultima comincia 
+		dalla linea 1 e legge una riga ogni 2. Perchè usare l'interlacing, che sembra rendere tutto più complicato? La risposta è negli obbiettivi 
+		che originariamente si poneva GIF, che voleva essere un protocollo di comunicazione di immagini per la visualizzazione online. 
+		Un utente collegato, ad esempio, ad internet può non solo scaricare l'immagine, ma anche visualizzarla mentre viene scaricata. 
+		Se l'immagine non fosse interlached verrebbe visualizzata progressivamente dall'alto verso il basso; mentre con l'interlaching è visibile 
+		in qualche modo l'intera immagine, e l'occhio e il cervello di chi guarda sostituiscono il restante. 
+	</p>
+
+
+<table style="text-align:center;width:70%;margin:10px" cellspacing="1">
+<tbody style="text-align:center">
+	<tr>
+		<th style="border:1px solid black;">
+			<b>&nbsp;&nbsp;Non-Interlaced&nbsp;&nbsp;</b>
+		</th>
+		<th style="border:1px solid black;">
+			<b>&nbsp;&nbsp;Interlaced&nbsp;&nbsp;</b>
+		</th>
+	</tr>
+	<tr>
+		<td style="border:1px solid black;">0</td>
+		<td style="border:1px solid black;">0</td>
+	</tr>
+	<tr>
+		<td style="border:1px solid black;">1</td>
+		<td style="border:1px solid black;">8</td>
+	</tr>
+	<tr>
+		<td style="border:1px solid black;">2</td>
+		<td style="border:1px solid black;">4</td>
+	</tr>
+	<tr>
+		<td style="border:1px solid black;">3</td>
+		<td style="border:1px solid black;">12</td>
+	</tr>
+	<tr>
+		<td style="border:1px solid black;">4</td>
+		<td style="border:1px solid black;">2</td>
+	</tr>
+	<tr>
+		<td style="border:1px solid black;">5</td>
+		<td style="border:1px solid black;">6</td>
+	</tr>
+	<tr>
+		<td style="border:1px solid black;">6</td>
+		<td style="border:1px solid black;">10</td>
+	</tr>
+	<tr>
+		<td style="border:1px solid black;">7</td>
+		<td style="border:1px solid black;">14</td>
+	</tr>
+	<tr>
+		<td style="border:1px solid black;">8</td>
+		<td style="border:1px solid black;">1</td>
+	</tr>
+	<tr>
+		<td style="border:1px solid black;">9</td>
+		<td style="border:1px solid black;">3</td>
+	</tr>
+	<tr>
+		<td style="border:1px solid black;">10</td>
+		<td style="border:1px solid black;">5</td>
+	</tr>
+	<tr>
+		<td style="border:1px solid black;">11</td>
+		<td style="border:1px solid black;">7</td>
+	</tr>
+	<tr>
+		<td style="border:1px solid black;">12</td>
+		<td style="border:1px solid black;">9</td>
+	</tr>
+	<tr>
+		<td style="border:1px solid black;">13</td>
+		<td style="border:1px solid black;">11</td>
+	</tr>
+	<tr>
+		<td style="border:1px solid black;">14</td>
+		<td style="border:1px solid black;">13</td>
+	</tr>
+	<tr>
+		<td style="border:1px solid black;">15</td>
+		<td style="border:1px solid black;">15</td>
+	</tr>
+</tbody>
+</table>
+
+<h4>Esempio di Interlacing </h4>
+
+<h4><b>GIF 89a</b><br><br></h4>
+	<p class="Text">
+	GIF 89a è la versione più recente e risale al luglio 1989; contiene diversi blocchi in più rispetto a GIF87a, e 
+	quindi non può essere letto correttamente dai lettori di quest'ultimo , che in genere non tentano neanche di visualizzare un'immagine 
+	89a perchè non riconoscono il numero della versione.<br><br>
+	</p>
+	<img src="TGIF89a.gif" width="472" height="291" alt="Struttura generale di un file GIF">
+	<p class="Text">
+	L'Header di una GIF occupa solo 6 byte e serve per identificare il file come GIF. Il Logical Screen Descriptor, 
+	che può essere separato dall'Header, è una specie di secondo Header, che descrive schermo e colori con cui è stata creata l'immagine. 
+	Quest'ultimo può essere seguito da una Global Color Table ( Tabella Globale dei colori ); se non c'è, ogni immagine ha una sua Local Color Table. 
+	Se anche questa non è presente, si applica una tabella dei colori di default in cui il primo colore è il nero e il secondo il bianco. I blocchi Comment 
+	Extension servono per inserire testo human-readable( leggibili all'uomo ) in un file GIF e possono essere in un numero qualsiasi. Possono contenere 
+	fino a 255 caratteri ASCII a 7 bit, inclusi tutti i caratteri di controllo. I blocchi Application Extension hanno una lunghezza, ciascuno, di 14 byte e 
+	contengono informazioni specifiche dell'applicazione che sta leggendo e interpretando i dati, leggibili solo da questa applicazione. Si tratta di istruzioni 
+	su come cambiare modo di funzionamento del video, applicare elaborazioni particolari all'immagine e memorizzare altre tabelle di colori, o anche
+	informazioni di controllo della macchina su cui gira l'applicazione, ad esempio come manipolare i file, come accedere a modem e stampanti e come 
+	inviare segnali allo speaker audio. Il blocco Graphics Control Extension contiene le informazioni sul Transparent Color e dati di rendering che servono 
+	per creare le Animated GIF ( GIF Animate ). Il blocco Local Image Descriptor contiene informazioni riguardanti l'immagine da visualizzare come 
+	altezza e lunghezza o/e se l'immagine è interlaced o no. Il blocco Plain Text Extension contiene del testo il cui rendering avviene come per le immagini 
+	grafiche. In ogni blocco è descritta una griglia, specificandone altezza, larghezza e posizione, nonché la dimensione della cella che contiene un carattere. I colori di foreground e background sono presi dalla tabella dei colori globale. Infine, il blocco Trailer è un byte che si trova alla fine file e vale sempre 3Bh.  
+	</p>
+
+<hr>
+
+
+</body>
+</html>

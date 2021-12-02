@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta name="author" CONTENT="SRD">
+		<meta name="generator" CONTENT="notepad">
+	</head>
+	<link rel="stylesheet" href="set.css">
+	<body class="page">
+	<h5>Alcuni formati grafici</h5>
+	<hr>
+	<h4>Introduzione</h4>
+	<p class="Text">
+	Successivamente verranno approfonditi i 3 formati grafici più usati nel mondo della Computer Graphics. 
+	</p>
+	<h4>Microsoft Windows Bitmap</h4>
+	<p class="Text">
+	<b>Tipo:</b> Bitmap<br>
+	<b>Colori:</b> Mono, 4 bit, 8 bit, 24 bit<br>
+	<b>Compressione:</b> RLE, Nessuna<br>
+	<b>Dimensione massima dell'immagine:</b> 64kx64k pixel<br><br>
+	Microsoft Windows Bitmap è usato in diverse varianti dai prodotti Microsoft Windows. E' un formato di scambio e memorizzazione. Pur essendo basato sulle strutture di dati bitmap interne di Windows, &egrave supportato da molte applicazioni non Windows e non-PC. Esistono 2 versioni di questo formato per 2 sistemi operativi diversi:
+	</p>
+	<ul class="Text">
+		<li>Microsoft Windows 1.X and 2.X
+		<li>OS/2              1.X
+		<li>Microsoft Windows 3.X
+		<li>OS/2              2.X
+	</ul>
+	<p class="Text">
+	BMP Version 1 contiene due sezioni: un header e i dati bitmap.
+	BMP Version 3 contiene quattro sezioni: un header bitmap, un header di informazioni, una palette e i dati bitmap, e solo la palette. L'header bitmap è lungo 14 byte ed &egrave pressoch&egrave identico all'header di version 1.<br><br>
+	<b>Version 1 ( Microsoft Windows 1.x e 2.x )</b>
+	</p>
+	<pre>
+typedef struct _Win3xBitmapHeader
+       { 
+         WORD Type;         /* Tipo di file (sempre 0) */
+         WORD Width;        /* Larghezza della bitmap in pixel */
+         WORD Height;       /* Altezza della bitmap in scan line */
+         WORD ByteWidth;    /* Larghezza della bitmap in byte */
+         BYTE Planes;       /* Numero di piani di colore */
+         BYTE BitsPerPixel; /* Numero di bits per pixel */
+       } WIN1XHEAD;
+</pre>
+<p class="Text">
+<b>Version 3 ( Microsoft Windows 3.x )</b><br><br>
+<b>Header bitmap</b><br><br>
+</p>
+<pre>
+typedef struct _Win3xBitmapHeader
+       { 
+         WORD  ImageFileType;   /* Tipo del file immagine,sempre 4DD2 ("BM") */
+         DWORD FileSize;        /* Dimensione del file in byte */     
+         WORD  Reserved1;       /* Sempre 0 */     
+         WORD  Reserved2;       /* Sempre 0 */
+         DWORD ImageDataOffset; /* Offset dell'immagine in byte */
+       } WIN3XHEAD;
+</pre><br>
+
+<p class="Text"><b>Header di informazioni</b><br><br></p>
+<pre>
+typedef struct _Win3xBitmapInfoHeader
+       {
+         WORD  HeaderSize;         /* Dimensione dell'header */   
+         DWORD ImageWidth;         /* Larghezza dell'immagine in pixel */  
+         DWORD ImageHeight;        /* Altezza dell'immagine in pixel */    
+         WORD  NumberOfImagePlanes;/* Numero dei piani, sempre 1 */
+         WORD  BitsPerPixel;       /* Bit per pixel (1, 4, 8 o 24) */ 
+         DWORD CompressionMethod;  /* Metodo di compressione (0, 1, 2) */ 
+         DWORD SizeOfBitmap;       /* Dimensione della bitmap in byte */
+         DWORD HorzResolution;     /* Risoluzione orizzontale in pixel   per metro */
+         DWORD VertResolution;     /* Risoluzione verticale in pixel per metro */ 
+         DWORD NumColorsUsed;      /* Numero di colori dell'immagine */
+         DWORD NumSignificantColors; /* Numero di colori importanti nella palette */
+       }  WIN3XINFOHEAD;
+</pre>
+<p class="Text">
+<b>Palette</b><br><br>
+I file BMP a 1, 4, 8 bit hanno una palette la cui dimensione dipende dal numero di colori dell'immagine e si ottiene da NumColorsUsed. La struttura della palette è come segue:
+</p>
+<pre>
+typedef struct _Win3xPalette
+       {
+         RGBQUAD Palette[]; /* 2, 16 o 256 elementi */
+       }  WIN3XPALETTE;
+</pre>
+
+<p class="Text">
+In Microsoft Windows Version 3 le palette hanno valori di 4 byte, ognuno dei quali si chiama RGBQUAD nella letteratura Microsoft. 
+I primi 3 sono informazioni sul colore, il quarto di riserva è sempre 0.<br><br>
+<b>Dati di immagine</b><br><br>
+Possono essere non compressi o in formato RLE. Il modo in cui vengono letti dipende dal numero di bit per pixel e dall'uso o meno 
+della compressione. In immagini a 1 bit ogni byte rappresenta 8 pixel e il MSB è il valore del primo pixel, mentre quelle a 4 bit hanno due pixel per byte. 
+Nelle immagini a 8 bit si usa un pixel per byte e infine in quella a 24 bit si usano 3 byte per pixel,che contengono nell'ordine i valori blu,verde e rosso.
+</p>
+<hr>
+</body>
+</html>

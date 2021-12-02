@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta name="author" CONTENT="SRD">
+		<meta name="generator" CONTENT="Scite">
+		<link rel="stylesheet" href="set.css">
+</head>
+
+<body class="page">
+<hr>
+<h4><a name="Dati BitMap">Dati BitMap</a></h4>
+<p class="Text">
+I dati bitmap sono formati da un insieme di valori numerici, corrispondenti agli indici dei colori della palette, che rappresentano i singoli pixel.
+La parola bitmap significa letteralmente mappa di bit, e ogni bit corrisponde a un pixel. In realt&agrave; la corrispondenza non è cos&igrave; diretta, infatti viene 
+utilizzato il termine <b>profondit&agrave</b> per rappresentare il numero di bit per pixel, cioè il numero di colori rappresentabili secondo la legge 
+numero di colori 2<SUP>n</SUP> con n numero di bit.  Ad esempio, una profondit&agrave; di 1 bit consente due colori, una di 4 bit consente 16 colori, e 
+cos&igrave; via.<br>
+<img src="TBitMap.gif" width="105" height="105" alt="Esempio BitMap">
+<b><br>Bitmap Data in File:</b><br>
+0, 0, 0, 0, 0, 0, 0, 0, 255,  255, 255, 255, 255, 0, 0, ...
+</p>
+
+<h4><a name="Dati Vettoriali">Dati Vettoriali</a></h4>
+<p class="Text">
+I dati vettoriali sono un insieme di <b>punti chiave</b>, che vengono usati da un programma di rendering per ricostruire linee, poligoni, 
+curve e qualsiasi oggetto facilmente rappresentabile con linee. Associati ai punti chiave ci sono informazioni su attributi, come il colore, 
+lo spessore delle linee, e un set di regole per il programma che deve tracciare i disegni.
+<br>
+<img src="Tvettoriale.gif" width="400" height="150" alt="Esempi di Immagini Vettoriali">
+</p>
+
+<h4><a name="MetaFile">MetaFile</a></h4>
+<p class="Text">
+I metafile sono un insieme di dati bitmap e di dati vettoriali. Vengono utilizzati per trasferire dati tra diverse macchine. 
+La natura character - oriented dei metafile ASCII, in particolare, elimina i problemi dovuti all'ordinamento dei byte nonché quelli incontrati trasferendo 
+file binari nelle reti, dove l'eliminazione dell'ottavo bit di ogni byte può danneggiare irreparabilmente il file.
+</p>
+<hr>
+</body>
+</html>

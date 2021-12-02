@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta name="author" CONTENT="SRD">
+		<meta name="generator" CONTENT="notepad">
+	</head>
+	<link rel="stylesheet" href="set.css">
+	<body class="page">
+		<hr>
+		<h4>LZW (Lempel Ziv Welch)</h4>
+		<p class="Text">
+		LZW è un algoritmo a sostituzione o anche a dizionario (dictionary based), perchè costruisce un dizionario dei dati, 
+		detto anche tabella di traduzione o string table. Pattern di dati vengono identificati e cercati nel dizionario; se non li si trova, 
+		viene costruito un codice di quel pattern, ovviamente di dimensioni minori, e aggiunto al dizionario, e poi scritto nel flusso dei 
+		dati compressi. Se un pattern è già scritto nel dizionario, il suo codice viene direttamente scritto nell'output. I formati grafici che 
+		usano la compressione LZW sono GIF e TIFF.
+		</p>
+		<h4><a name="JPEG">JPEG o DCT (Discrete Cosine Trasform)</a></h4>
+		<p class="Text">
+		JPEG non è un algoritmo, ma un insieme di metodi adattabile alle esigenze del singolo utente, 
+		che vanno da immagini molto piccole e di scarsa qualità a immagini di alta qualità più ingombranti ( comunque minori rispetto all'originale). 
+		E' un metodo lossy, che quindi elimina dati inutili durante la compressione, in particolare quelli che l'occhio umano non percepisce facilmente, 
+		come leggerissimi cambiamenti di colore. L'end user può controllare la qualità di un compressore JPEG con un parametro chiamato "fattore Q", 
+		il cui range varia da 1 a 100, dove 1 sta per la qualità peggiore e 100 per quella migliore. Lo schema di compressione opera nei seguenti passi:
+		</p>
+		<ul class="Text">
+			<li>Trasforma l'immagine in uno spazio di colori ottimale.</li>
+			<li>Esegue un downsampling sulle componenti di crominanza.</li>
+			<li>Applica la DCT ai blocchi di pixel per rimuovere dati ridondanti.</li>
+			<li>Quantizza ogni blocco di coefficienti DCT usando una funzione peso ottimizzata per l'occhio umano.</li>
+			<li>Codifica i coefficienti risultanti (i dati dell'immagine) con un algoritmo di Huffman con parole a lunghezza variabile per eliminare la ridondanza.</li>
+		</ul>
+		<p class="Text">La decompressione ripercorre gli stessi passi al contrario.</p>
+		<hr>
+	</body>
+</html>

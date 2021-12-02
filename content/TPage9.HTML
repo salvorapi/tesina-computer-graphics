@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta name="author" CONTENT="SRD">
+		<meta name="generator" CONTENT="notepad">
+	</head>
+	<link rel="stylesheet" href="set.css">
+	<body class="page">
+<hr>	
+<h4>JPEG File Interchange Format</h4>
+<p class="Text">
+<b>Tipo:</b> Bitmap<br>
+<b>Colori:</b> Fino a 24 bit.<br>
+<b>Compressione:</b> JPEG.<br>
+<b>Dimensione massima dell'immagine:</b> 64kx64k pixel.
+<br><br>
+
+JPEG (Joint Photographic Experts Group) è il nome di un'organizzazione che si occupa di standard, di un metodo di compressione 
+e talvolta di un formato di file. JPEG File interchange Format (JFIF) è stato sviluppato da C-Cube Microsystem per memorizzare dati
+compressi JPEG e per scambiarli tra sistemi e applicazioni altrimenti incompatibili. Sia JPEG che JFIF sono stream di byte che conservano 
+valori di 16 bit. I dati JPEG generalmente sono stream di blocchi identificati da un marker. I primi due byte di uno stream sono i valori FFh D8h 
+nel marker Start Of Image (SOI). In un file JFIF c'è un marker JFIF APP0(Application) immediatamente dopo il SOI, con i codici FFh E0h e i 
+caratteri JFIF. Oltre al segmento del marker JFIF ci possono essere più segmenti opzionali di marker dell'estensione JFIF, seguiti dai dati dell'immagine 
+che vengono decompressi dall'algoritmo DCT(Discrete Cosine Tranform).
+</p>
+<div style="text-align:center">
+<img src="TJPEG.gif" width="513" height="273" alt="Processo di trasformazione di una JPEG">
+</div>
+<hr>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta name="author" CONTENT="SRD">
+	<meta name="generator" CONTENT="notepad">
+	<link rel="stylesheet" href="set.css">
+</head>
+<body class="page">
+<h5>Compressione dei dati grafici</h5>
+<hr>
+
+<h4>Diversi tipi di compressione</h4>
+<p class="Text">
+La compressione riduce le dimensioni di un blocco di informazioni e serve per conservare pi&ugrave; infomazioni nello stesso spazio. 
+Un compressore &egrave; un algoritmo che compatta i dati originali, mentre un decompressore li ricostruisce noto l'algoritmo di compressione. 
+I pi&ugrave; comuni compressori sono:
+</p>
+
+<ul>
+	<li><a href="#RLE">RLE (Run Lenght Encoding)</a>
+	<li><a href="TPage6.html">LZW (Lempel Ziv Welch)</a>
+	<li><a href="TPage6.html#JPEG">JPEG o DCT (Discrete Cosine Trasform)</a>
+</ul>
+
+<h4><a name="RLE">RLE (Run Lenght Encoding)</a></h4>
+<p class="Text">
+La dimensione fisica di una stringa formata da pi&ugrave; caratteri uguali - detta run - viene ridotta in due byte, di cui il primo rappresenta il numero 
+di caratteri e il secondo il carattere. Un run può contenere fino a 128 o 256 caratteri. Ad esempio la stringa AAAAAAbbbXXXXXt codificata 
+risulta 6A3b5X1t. Si hanno 3 livelli di codifica: a bit, a byte e a pixel. Il livello a bit codifica run di bit uguali e sono efficienti solo per immagini 
+monocromatiche a 1 bit. Il livello byte  codifica run di byte uguali in packet di due byte. L'algoritmo a livello di pixel si applica quando un pixel 
+occupa pi&ugrave; di un byte. Si utilizza un byte di run count e N byte, corrispondenti alla dimensione del pixel in byte, per il run value.
+</p>
+<table style="width:100%">
+<tr>
+	<td>
+		<img src="TRunBit.gif" width="194" height="122" alt="RunBit">
+		<p class="Note"><b>Packet RLE a livello di bit</b></p>
+	</td>
+	<td style="text-align:right" >
+		<img src="TRunByte.gif" width="206" height="116" alt="RunByte">
+		<p class="Note" ><b>Packet RLE a livello di byte</b></p>
+	</td>
+</tr>
+</table>
+
+<div style="text-align:center;">
+	<img src="TRunPixel.gif" width="397" height="137" alt="RunPixel">
+	<p class="Note"><b>Packet RLE a livello di pixel</b></p>
+</div>
+
+
+<hr>
+
+</body>
+</html>

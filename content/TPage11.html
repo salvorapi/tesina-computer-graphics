@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta name="author" CONTENT="SRD">
+		<meta name="generator" CONTENT="notepad">
+	</head>
+	<link rel="stylesheet" href="set.css">
+	<body class="page">
+
+<hr>
+<h4>I Frattali</h4>
+<p class="Text">
+Una nuova geometria intesa a interpretare, descrivere e riprodurre una particolare proprietà delle figure naturali è la geometria frattale, 
+incominciatasi a diffondere nella seconda metà del ventesimo secolo, soprattutto ad opera di Benoit Mandelbrot. Una figura frattale ha la 
+caratteristica di avere un'invarianza rispetto al cambiamento di scala, detta autosomoglianza. Ad esempio, in figura, vengono via via ingranditi 
+frammenti del contorno dell'insieme di Mandelbrot, costruito mediante un computer seguendo una certa legge matematica.
+</p>
+<img src="TJulia1.gif" width="201" height="176"  alt="Julia">
+<img src="TJulia2.gif" width="201" height="176"  alt="Julia Zoom 2X">
+<img src="TJulia3.gif" width="201" height="176"  alt="Julia Zoom 3X">
+<p class="Text">
+<b>JULIA</b><br><br>
+Gli ingrandimenti evidenziano un'invarianza di forma rispetto al cambiamento di scala che portano a forme sempre più frastagliate. 
+Alle figure frattali non viene attribuita una dimensione intera, bensì una dimensione espressa da numeri decimali. Se una figura frattale 
+viene suddivisa in un certo numero N di parti uguali, per riportare ciascuna parte alla grandezza originale occorre un ingrandimento di fattore M; 
+si definisce così dimensione di questa figura il valore del rapporto:
+<br>
+<div class="center"><img src="TFormula.gif" width="117" height="50" alt="d = log(N) / log(M)"></div>
+<br>
+</p>
+<p class="Text">
+Gli elementi che costituiscono le figure frattali non possono essere disegnati direttamente, ma solo definiti mediante un algoritmo costruttivo, 
+da ripetersi all'infinito. Oltre all'insieme di Mandelbrot ( chiamato anche Julia ) esistono altri esempi di figure frattali, come il fiocco di neve di Kock , 
+ottenuto dividendo ciascun lato di un triangolo equilatero in tre parti uguali e costruendo su ognuna delle parti centrali un triangolo equilatero. 
+Ripetendo quest'ultimo procedimento all'infinito si ottiene un immagine assomigliante ad un fiocco di neve.
+<div class="center"><img src="TFioccoDiNeve.gif" width="204" height="197" alt="Fiocco di neve"></div>
+</p>
+<p class="Text">
+<b>Insieme di Mandelbrot</b><br></br>
+L'insieme di Mandelbrot si ricava dall'espressione:
+<br>
+</p>
+<div class="Text" style="text-align:center">Z<sub>n+1</sub>=Z<sup>2</sup><sub>n</sub> + c</div>
+<p class="Text">
+dove Z<sub>0</sub>=0 e c &egrave un numero complesso arbitrario. Si suppone di determinare i suoi termini per ogni valore di c, cioè per ogni punto del piano di Gauss, dove i numeri complessi vengono rappresentati graficamente. Si scopre che per alcuni valori di c  la dimensione, che è la distanza del suo punto immagine dall'origine, dei termini della successione aumenta molto rapidamente dopo un certo numero di iterazioni, mentre per altri tale dimensione continua a compiere solo piccole oscillazioni. L'insieme di questi ultimi valori è detto insieme di Mandelbrot.  E' dimostrato che se dopo un certo numero di iterazioni, la dimensione dei termini dati dall'espressione è maggiore o uguale a 2, detta dimensione aumenterà sempre più rapidamente. Si può così realizzare un semplice algoritmo per individuare se un numero complesso  c fa parte o meno dell'insieme di Mandelbrot. Basta, infatti, realizzare un programma che compia un numero indice N di iterazioni, controlli se la dimensione dell'espressione supera il valore 2 prima dell'N-esima iterazione, quindi c non fa parte dell'insieme di Mandelbrot, o in caso contrario che c vi appartiene, e che rappresenti graficamente l'insieme dei valori trovati, colorando di nero i punti appartenenti all'insieme e lasciando bianchi i punti non appartenenti all'insieme. Sullo schermo apparirà così un tozzo otto rovesciato, di contorno irregolare che rappresenta l'insieme di Mandelbrot.
+<br>Esempio di programma:
+</p>
+
+<pre>
+10        INPUT "Parte Reale: ", CX
+20        INPUT "Parte Complessa: ", CY
+30        SCREEN 1
+40        FOR A = 0 TO 100
+50        FOR B = 0 TO 100
+60                X0 = -2 + A / 25
+70                Y0 = 2 - B / 25
+80                I = 1
+90                WHILE I < 20
+100                        X1 = X0 * X0 - Y0 * Y0 + CX
+110                        Y1 = 2 * X0 * Y0 + CY
+120                        IF X1 * X1 + Y1 * Y1 > 2 THEN GOTO 180
+130                        X0 = X1
+140                        Y0 = Y1
+150                        I = I + 1
+160                WEND
+170                GOTO 190
+180       PSET (A, B), 5
+190       NEXT B
+200       NEXT A
+</pre>
+<p class="Text">Il risultato finale sarà:</p>
+
+<div class="center"><img src="TMandelbrot.gif" width="157" height="131" alt="Preview di Mandelbrot"></div>
+<hr>
+</body>
+</html>
